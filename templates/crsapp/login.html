@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% extends 'crsapp/base.html' %}
+
+
+{% block content %}
+
+{% if form.erros %} 
+<p>ログインに失敗しました</p>
+{% endif %}
+{% if user.is_authenticated %}
+<button type="button" class="btn btn-success" style="margin:0 20px">
+<a href="{% url 'imageupload' %}" class="btn">戻る</a>
+</button>
+{% else %}
+<div class="container" style="margin:20px auto">
+    <form action="" method="POST" , class="form">{% csrf_token %}
+        
+        {{ form.username }}
+        {{ form.password }}
+        
+        <div class="container" style="margin:20px 20px 20px 0">
+        <div class="row" style="margin:20px 20px">
+            <button type="submit" class="btn btn-success" style="width:80px;margin:0 20px">
+                login
+            </button>
+            <button type="button" class="btn btn-success" style="width:80px; margin:0 20px;">
+                <a href="{%url 'signup'%}" style="color:#fff; ">
+                    signup
+                </a>
+            </button>
+        </div>
+        </div>
+        
+    </form>
+</div>
+{% endif %}
+
+
+
+
+
+{% endblock %}

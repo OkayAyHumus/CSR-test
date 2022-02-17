@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'crsapp/base.html' %}
+
+{% block content %}
+
+<div class="container" style="width:100%; margin:20px auto;">
+    <div style="width:90%; margin:20px auto; ">
+
+        <img src="{{ image_url }}" alt="" style="width:400px; margin:20px auto;">
+        <h3>横方向判定</h3>
+        <p>{{ a1 }}</p>
+        
+        <h3>前方向判定</h3>
+        <p>{{ a2 }}</p>
+    </div>
+    
+
+
+        <!-- <p>{{ right }}</p>
+        <p>{{ left }}</p>
+        <p>{{ tr }}</p>
+        <p>{{ tl }}</p> 
+        <p>{{ nb }}</p>  -->
+        
+
+</div>
+
+
+{% endblock %}

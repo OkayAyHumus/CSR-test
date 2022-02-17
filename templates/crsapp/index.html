@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'crsapp/base.html' %}
+
+{% block content %}
+<div class="container" style="margin:20px 20px">
+    <p>チャイルドシート着座姿勢が苦しくないかを確認してしましょう!!</p>
+    <!-- <form action="" method="POST", class="form" enctype="multipart/form-data"> -->
+    <form action="" method="POST", class="form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-success" style="margin:0 20px">
+            チェック!!
+        </button>
+    </form>
+</div>
+<div class="container" style="margin:20px 20px">
+    <label>
+        <p>注意事項</p>
+        <ol>
+            <li>当サービスサイトを利用することで発生した損害に対し、当方は責任を負わないものとします</li>
+            <li>撮影の際は、極力正面からお子様の体が全身写るように撮影ください。</li>
+            <li>お子様の服装は安全、検出の精度の向上のため極力厚着を避けてください。</li>
+            <li>こちらのアプリの適正判定は、チャイルドシートの長時間の使用を推奨するものではありません。<br>適度に休憩をとりながらの乗車をお願いします。</li>
+        </ol>
+    </label>
+
+
+</div>
+
+{% endblock %}
